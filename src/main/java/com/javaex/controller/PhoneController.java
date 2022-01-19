@@ -54,11 +54,10 @@ public class PhoneController {
 		List<PersonVo> personList = phoneDao.getPersonList();
 		System.out.println(personList.toString());
 		
-		//컨트롤러-->디스패서 서블릿한테 데이터를 보냄(=model)
-		//model,컨트롤러,view
+		//컨트롤러-->디스패처 서블릿한테 데이터를 보냄(=model)
 		model.addAttribute("personList", personList);
 		
-		//디스패서 서블릿한테 jsp정보를 리턴한다(view)
+		//디스패처 서블릿한테 jsp정보를 리턴한다(view)
 		return "/WEB-INF/views/list.jsp";
 	}
 	
@@ -69,7 +68,7 @@ public class PhoneController {
 		PhoneDao phoneDao = new PhoneDao();
 		PersonVo Pvo = phoneDao.getPerson(id);
 				
-		//컨트롤러-->디스패서 서블릿한테 데이터를 보냄(=model)
+		//컨트롤러-->디스패처 서블릿한테 데이터를 보냄(=model)
 		model.addAttribute("Pvo", Pvo);
 		
 		return "/WEB-INF/views/updateForm.jsp";
@@ -80,13 +79,13 @@ public class PhoneController {
 		System.out.println("PhoneController > update");
 		System.out.println(id);
 		
-		//수정할 값불러와서 personUpdate 해주기
+		//수정할 값불러와서 personUpdate 한다
 		PhoneDao phoneDao = new PhoneDao();
 		phoneDao.personUpdate(personVo);
 		PersonVo Pvo = phoneDao.getPerson(id);
 		System.out.println("수정완료");
 		
-		//디스패서 서블릿한테 jsp정보를 리턴한다(view)
+		//디스패처 서블릿한테 jsp정보를 리턴한다(view)
 		return "redirect:/phone/list";	
 	}
 	
