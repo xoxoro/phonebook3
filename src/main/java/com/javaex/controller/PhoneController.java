@@ -76,8 +76,9 @@ public class PhoneController {
 	}
 	
 	@RequestMapping(value="/update", method= {RequestMethod.GET, RequestMethod.POST})
-	public String update(@RequestParam("id") int id, @ModelAttribute PersonVo personVo) {
+	public String update(@RequestParam("personId") int id, @ModelAttribute PersonVo personVo) {
 		System.out.println("PhoneController > update");
+		System.out.println(id);
 		
 		//수정할 값불러와서 personUpdate 해주기
 		PhoneDao phoneDao = new PhoneDao();
