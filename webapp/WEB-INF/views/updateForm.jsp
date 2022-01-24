@@ -17,10 +17,10 @@
 		</p>
 		<!-- name은 필드값과 동일한 이름으로 설정해야 set을 통해 찾을수있다 -->
 		<form action="/phonebook3/phone/update" method="get">
-		이름(name): <input type="text" name="name" value="${Pvo.name}"><br>
-		핸드폰(hp): <input type="text" name="hp" value="${Pvo.hp}"><br>
-		회사(company): <input type="text" name="company" value="${Pvo.company}"><br>
-		코드(id): <input type="text" name="id" value="${Pvo.id}"><br>
+		이름(name): <input type="text" name="name" value="${personVo.name}"><br>
+		핸드폰(hp): <input type="text" name="hp" value="${personVo.hp}"><br>
+		회사(company): <input type="text" name="company" value="${personVo.company}"><br>
+		코드(id): <input type="text" name="personId" value="${personVo.personId}"><br>
 		<button type="submit">수정</button>
 		</form>
 		
